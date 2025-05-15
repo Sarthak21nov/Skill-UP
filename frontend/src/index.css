@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    scroll-behavior: smooth;
+}
+
+@keyframes LeftToRight {
+    from {
+        opacity: 0.4;
+        transform: translateX(-100%) ;
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes PopUp {
+    from {
+        opacity: 0;
+        scale: 0.4;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.animation-left {
+    animation: LeftToRight 3s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.animation-popup {
+ animation: PopUp 5s linear;
+ animation-timeline: view();
+ animation-range: entry 0% cover 40%;
+}
