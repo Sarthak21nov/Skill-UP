@@ -92,7 +92,7 @@ function Home() {
     const AIMLDesc = "AI/ML explores intelligent systems that mimic human behavior. Students learn about data, algorithms, and models that enable machines to recognize patterns, make decisions, and improve over time. Topics include supervised learning, classification, and real-life AI applications in daily life."
 
   return (
-    <section id='home' className='w-full min-h-[50vh]'>
+    <section id='home' className='w-full min-h-[50vh] z-1'>
        <div className='md:grid md:grid-cols-2 flex flex-col'>
             <div className='flex justify-center items-center col-span-1'>
                 <img src='https://www.transparentpng.com/thumb/student/ECcMj8-student-png.png' loading='lazy' className='m-4 mt-10'/>

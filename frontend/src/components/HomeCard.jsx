@@ -5,7 +5,7 @@ import React from 'react'
 function HomeCard(props) {
   return (
     <div className='z-0'>
-        <Box maxWidth="300px" className='shadow-2xl hover:scale-110 transition transform duration-300 m-5 animation-popup'>
+        <Box maxWidth="300px" className='shadow-2xl hover:scale-110 transition transform duration-300 m-5 animation-popup rounded-2xl'>
             <Card size="2">
                 <Inset clip="padding-box" side="top" pb="current">
                     <img

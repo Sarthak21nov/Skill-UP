@@ -12,7 +12,7 @@ function Navbar() {
   const toggleDrawer = () => setDrawerOpen(!isDrawerOpen)
 
   return (
-    <div className="w-full h-[10vh] bg-green-600 flex justify-between items-center px-4 fixed top-0 z-1000">
+    <div className="w-full h-[10vh] bg-green-600 flex justify-between items-center px-4 fixed top-0 z-10 overflow-x-hidden">
       {/* Logo */}
       <div className="w-[30%] md:w-[20%]">
         <h1 className="text-white font-semibold text-2xl">Skill Up</h1>
@@ -57,13 +57,13 @@ function Navbar() {
 
       {/* Drawer - shown only on mobile */}
       {isDrawerOpen && (
-        <div className="absolute top-[10vh] left-0 w-full bg-green-600 text-white z-50 flex flex-col items-center gap-4 py-4 md:hidden">
-          <li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold'>Home</li>
-          <li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold'>Learn</li>
-          <li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold'>About</li>
-          <li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold'>Contact</li>
+        <div className="absolute top-[10vh] left-0 w-full bg-green-400 text-white z-50 flex flex-col items-center gap-4 py-4 md:hidden">
+          <a href='#'><li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold translate-x-[-70%]'>Home</li></a>
+          <a href='#learn'><li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold translate-x-[-70%]'>Learn</li></a>
+          <a href='#about'><li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold translate-x-[-70%]'>About</li></a>
+          <a href='#contact'><li className='hover:scale-110 transition transform duration-300 hover:cursor-pointer hover:font-semibold translate-x-[-70%]'>Contact</li></a>
           {isLoggedIn ? (
-            <Avatar.Root className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle">
+            <Avatar.Root className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle translate-x-[-70%]">
               <Avatar.Fallback className="leading-1 flex size-full items-center justify-center bg-white text-[15px] font-medium text-violet-400">
                 PD
               </Avatar.Fallback>

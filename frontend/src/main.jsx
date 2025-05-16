@@ -8,7 +8,7 @@ import { Theme } from '@radix-ui/themes';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Theme accentColor="mint" grayColor="sand" radius="large" scaling="95%" appearance='dark'>
+    <Theme accentColor="mint" grayColor="sand" radius="large" scaling="95%" appearance='light'>
       <App />
     </Theme>
   </StrictMode>,

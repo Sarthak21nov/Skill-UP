@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html{
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%
 }
 
 @keyframes LeftToRight {
@@ -12,6 +15,17 @@ html{
         transform: translateX(-100%) ;
     } 
     to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes RightToLeft{
+    from{
+        opacity: 0.4;
+        transform: translateX(100%);
+    }
+    to{
         opacity: 1;
         transform: translateX(0%);
     }
@@ -29,13 +43,19 @@ html{
 }
 
 .animation-left {
-    animation: LeftToRight 3s linear;
+    animation: LeftToRight 5s linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 20%;
 }
 
 .animation-popup {
  animation: PopUp 5s linear;
  animation-timeline: view();
  animation-range: entry 0% cover 40%;
+}
+
+.animation-right {
+    animation: RightToLeft 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 20%;
 }
