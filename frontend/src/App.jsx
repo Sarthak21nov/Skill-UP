@@ -7,7 +7,7 @@ import Home from './components/Home';
 import MainPage from './pages/MainPage';
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 
 function App({ setThemeAppearance, themeAppearance }) {
   const HomePage = () => (
