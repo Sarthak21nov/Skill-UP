@@ -4,6 +4,9 @@ import { Button } from '@radix-ui/themes';
 import { Link } from 'react-router-dom';
 
 function Learn() {
+
+  const theme = localStorage.getItem("Theme")
+
   return (
     <section id='learn' className='overflow-x-hidden overflow-y-hidden'>
       <h1 className='text-center text-5xl font-semibold'>Learn with us</h1>
@@ -11,14 +14,19 @@ function Learn() {
       <div className='relative bg-black'>
         <img src={background} className='w-full p-5' loading='lazy' />
 
-        <div className='absolute z-10 top-20 w-full flex h-full justify-center items-center md:translate-y-[-10%] md:translate-x-[30%] translate-y-[-20%] translate-x-[22%]'>
-            <h1 className='md:text-2xl text-md font-bold'>Click on the button below <br/>to access the Learning Page</h1>
+        <div className='absolute z-10 top-20 w-full flex h-full justify-center items-center md:translate-y-[-10%] md:translate-x-[30%] translate-y-[-30%] translate-x-[22%]'>
+          {theme === 'light'? <h1 className='md:text-2xl text-sm font-bold'>Click on the button below <br/>to access the Learning Page</h1> : <h1 className='md:text-2xl text-sm font-bold text-black'>Click on the button below <br/>to access the Learning Page</h1>}
         </div>
         {/* ✅ Add w-full here */}
         <div className='absolute top-20 w-full z-10 flex justify-center items-center h-full md:translate-x-[30%] translate-x-[25%]'>
-          <a href='/learn'><Button radius="full" variant="soft" className='hover:scale-110 hover:cursor-pointer transition transform duration-500 z-1'>
+          {theme === 'light'? <a href='/learn'><Button radius="full" variant="soft" className='hover:scale-110 hover:cursor-pointer transition transform duration-500 z-1'>
             Click to Learn
-          </Button></a>
+          </Button></a> : <a href='/learn'><Button radius="full" variant="soft" className='hover:scale-110 hover:cursor-pointer transition transform duration-500 z-1 bg-green-600 text-black'>
+            Click to Learn
+          </Button></a>}
+          {/* <a href='/learn'><Button radius="full" variant="soft" className='hover:scale-110 hover:cursor-pointer transition transform duration-500 z-1'>
+            Click to Learn
+          </Button></a> */}
         </div>
       </div>
     </section>

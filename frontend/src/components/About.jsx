@@ -5,6 +5,7 @@ import offer from '../assets/studentTeacher.jpeg'
 import community from '../assets/studentCommunity.jpeg'
 
 function About() {
+    const theme = localStorage.getItem("Theme")
   return (
     <section id='about' className='mt-7'>
 
@@ -13,8 +14,8 @@ function About() {
             <div className='md:grid md:grid-cols-2 flex flex-wrap'>
                 {/* Left Div */}
                 <div className='flex-col md:col-span-1'>
-                    <p className='text-4xl font-poppins font-semibold text-center pt-8 animation-left'>About US</p>
-                    <p className='p-4 text-center animation-left'>Skill Up is a free online learning platform that empowers students with a wide range of skill development resources. It offers curated content across multiple domains such as technology, business, design, and more. The platform is designed to help learners upgrade their skills at absolutely no cost—₹0. Skill Up promotes self-paced learning, making it accessible and flexible for students from all backgrounds. Its mission is to bridge the skill gap and prepare individuals for real-world opportunities.</p>
+                    {theme === 'dark'? <p className='text-4xl text-black font-poppins font-semibold text-center pt-8 animation-left'>About US</p> : <p className='text-4xl font-poppins font-semibold text-center pt-8 animation-left'>About US</p>}
+                    {theme ==='dark'?<p className='p-4 text-center text-black animation-left'>Skill Up is a free online learning platform that empowers students with a wide range of skill development resources. It offers curated content across multiple domains such as technology, business, design, and more. The platform is designed to help learners upgrade their skills at absolutely no cost—₹0. Skill Up promotes self-paced learning, making it accessible and flexible for students from all backgrounds. Its mission is to bridge the skill gap and prepare individuals for real-world opportunities.</p>: <p className='p-4 text-center animation-left'>Skill Up is a free online learning platform that empowers students with a wide range of skill development resources. It offers curated content across multiple domains such as technology, business, design, and more. The platform is designed to help learners upgrade their skills at absolutely no cost—₹0. Skill Up promotes self-paced learning, making it accessible and flexible for students from all backgrounds. Its mission is to bridge the skill gap and prepare individuals for real-world opportunities.</p>}
                 </div>
                 {/* Right Div */}
                 <div className='flex justify-center items-center md:col-span-1'>
