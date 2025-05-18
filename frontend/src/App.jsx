@@ -11,7 +11,8 @@ import Footer from './components/Footer';
 
 function App({ setThemeAppearance, themeAppearance }) {
   const HomePage = () => (
-    <div>
+    <div className='mt-[10vh]'>
+      <Navbar setThemeAppearance={setThemeAppearance} themeAppearance={themeAppearance} />
       <Home />
       <Learn />
       <About/>
@@ -22,11 +23,11 @@ function App({ setThemeAppearance, themeAppearance }) {
 
   return (
     <BrowserRouter>
-      <Navbar setThemeAppearance={setThemeAppearance} themeAppearance={themeAppearance} />
-      <div className='mt-[10vh]'>
+      {/* <Navbar setThemeAppearance={setThemeAppearance} themeAppearance={themeAppearance} /> */}
+      <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/learn" element={<MainPage />} />
+          <Route path="/learn" element={<MainPage/>} />
         </Routes>
       </div>
     </BrowserRouter>
