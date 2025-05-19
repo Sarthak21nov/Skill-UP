@@ -5,7 +5,7 @@ import { IoClose } from 'react-icons/io5'
 import { SunIcon } from '@radix-ui/react-icons'
 
 function Navbar({ setThemeAppearance, themeAppearance }) {
-  const [isLoggedIn, setLogin] = useState(true)
+  const [isLoggedIn, setLogin] = useState(false)
   const [isDrawerOpen, setDrawerOpen] = useState(false)
 
   const toggleDrawer = () => setDrawerOpen(!isDrawerOpen)
@@ -18,6 +18,10 @@ function Navbar({ setThemeAppearance, themeAppearance }) {
       setDrawerOpen(false);
     }
   };
+
+  const HandleLogin = ()=>{
+    setLogin(!isLoggedIn)
+  }
 
 
   return (
@@ -54,13 +58,13 @@ function Navbar({ setThemeAppearance, themeAppearance }) {
         {/* Avatar/Login - only on medium and up */}
         <div className="hidden md:block">
           {isLoggedIn ? (
-            <Avatar.Root className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle">
+            <Avatar.Root className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle hover:cursor-pointer" onClick={HandleLogin}>
               <Avatar.Fallback className="leading-1 flex size-full items-center justify-center bg-white text-[15px] font-medium text-violet11">
                 PD
               </Avatar.Fallback>
             </Avatar.Root>
           ) : (
-            <h1 className="font-medium text-white">Login</h1>
+            <h1 className="font-medium text-white hover:scale-110 transition transform duration-300 hover:cursor-pointer" onClick={HandleLogin}>Login</h1>
           )}
         </div>
       </div>
@@ -74,13 +78,13 @@ function Navbar({ setThemeAppearance, themeAppearance }) {
           <a href="#contact" onClick={toggleDrawer} className="text-lg hover:scale-110 transition duration-300 hover:cursor-pointer hover:font-semibold">Contact</a>
           <li onClick={ChangeTheme} className='no-decoration'><SunIcon/></li>
           {isLoggedIn ? (
-            <Avatar.Root className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle mt-2">
+            <Avatar.Root className="inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full bg-blackA1 align-middle mt-2" onClick={HandleLogin}>
               <Avatar.Fallback className="leading-1 flex size-full items-center justify-center bg-white text-[15px] font-medium text-violet-400">
                 PD
               </Avatar.Fallback>
             </Avatar.Root>
           ) : (
-            <h1 className="font-medium">Login</h1>
+            <h1 className="font-medium" onClick={HandleLogin}>Login</h1>
           )}
         </div>
       )}
